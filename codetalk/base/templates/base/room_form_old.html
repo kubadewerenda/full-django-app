@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div>
+    <form method="POST" action="">
+        <!-- wysyla ten token podczas kazegho wyslania formularza -->
+        {% csrf_token %}
+        <!-- teraz wczytujemy formularz przygotowany na bazie modelform z django ktory tworzy formularz na podstawie naszego modelu w models.py -->
+        {{form.as_p}}
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+{% endblock %}
